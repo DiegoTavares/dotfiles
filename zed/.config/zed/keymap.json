@@ -1,0 +1,30 @@
+[
+  {
+    "bindings": {
+      // Change the default action on `menu::Confirm` by setting the parameter
+      "cmd-e": "file_finder::Toggle",
+      "f3": "search::SelectNextMatch",
+      "shift-f3": "vim::SelectPreviousMatch",
+      "cmd-shift-b": "editor::GoToImplementation",
+      "cmd-3": "outline_panel::ToggleFocus",
+      "cmd-1": "project_panel::ToggleFocus",
+      "cmd-i": "editor::ToggleInlayHints"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-q": null
+    }
+  },
+  {
+    "context": "(Workspace || Editor)",
+    "bindings": {
+      "cmd-j": "terminal_panel::Toggle"
+    }
+  },
+  {
+    "bindings": {
+      "z c l": "workspace::ToggleCenteredLayout"
+    }
+  }
+]

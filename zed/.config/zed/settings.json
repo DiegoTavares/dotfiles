@@ -1,0 +1,184 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "cli_default_open_behavior": "new_window",
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "terminal_init_command": "~/.config/zed/herdr-agent.sh",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
+      "effort": "high",
+    },
+    "dock": "right",
+    "single_file_review": true,
+    "favorite_models": [],
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
+      "enable_thinking": false,
+    },
+    "model_parameters": [],
+  },
+  "diff_view_style": "split",
+  "git_panel": {
+    "group_by": "none",
+    "dock": "left",
+    "tree_view": true,
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  // "centered_layout": {
+  //   "left_padding": 0.1,
+  //   "right_padding": 0.1,
+  // },
+  // "agent": {
+  //   "single_file_review": true,
+  //   "tool_permissions": {
+  //     "default": "allow",
+  //   },
+  //   "model_parameters": [],
+  //   "default_profile": "write",
+  //   "inline_assistant_model": {
+  //     "provider": "anthropic",
+  //     "model": "claude-sonnet-4-5-latest",
+  //   },
+  //   "default_model": {
+  //     "provider": "openai",
+  //     "model": "gpt-4.1",
+  //   },
+  // },
+  "edit_predictions": {
+    "disabled_globs": ["*.rs", "*.py", "*.md", "*.java", "*.json", "*.yaml"],
+  },
+  "base_keymap": "JetBrains",
+  "cursor_blink": false,
+  "preferred_line_length": 100,
+  "theme": "One Dark",
+  "ui_font_size": 18.0,
+  "buffer_font_size": 17.0,
+  "autosave": "on_focus_change",
+  "tab_bar": {
+    "show": false,
+  },
+  "terminal": {
+    "detect_venv": {
+      "on": {
+        "directories": ["venv"],
+        "activate_script": "default",
+      },
+    },
+    "env": {
+      "RUST_LOG": "info",
+    },
+  },
+  "project_panel": {
+    "dock": "left",
+    "show_diagnostics": "errors",
+  },
+  "vim_mode": true,
+  "relative_line_numbers": "enabled",
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    },
+    "Java": {
+      "format_on_save": "off",
+    },
+    "Python": {
+      "format_on_save": "off",
+    },
+    "Proto": {
+      "format_on_save": "off",
+    },
+    "JSON": {
+      "format_on_save": "off",
+    },
+    "YAML": {
+      "format_on_save": "off",
+    },
+    "XML": {
+      "format_on_save": "off",
+    },
+  },
+  "lsp": {
+    "jdtls": {
+      "initialization_options": {
+        "settings": {
+          "java": {
+            //         "home": "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home",
+            //         "errors": {
+            //           "incompleteClasspath": {
+            //             "severity": "warning"
+            //           }
+            //         },
+            "configuration": {
+              "updateBuildConfiguration": "interactive",
+              "maven": {
+                "userSettings": null,
+              },
+              "projectOptions": {
+                "referencedLibraries": [
+                  "/Users/dtavares/dev/OpenCue/cuebot/build/libs/cuebot.jar",
+                  "/Users/dtavares/dev/OpenCue/cuebot/build/classes",
+                ],
+              },
+            },
+            "trace": {
+              "server": "verbose",
+            },
+            "import": {
+              "gradle": {
+                "enabled": true,
+              },
+              "maven": {
+                "enabled": true,
+              },
+            },
+          },
+        },
+      },
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+      },
+    },
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "high",
+        "mode": "auto",
+        "model": "claude-fable-5[1m]",
+      },
+      "type": "registry",
+      "default_mode": "acceptEdits",
+      "default_model": "sonnet",
+      "favorite_models": ["sonnet"],
+      "favorite_config_option_values": {
+        "model": ["opus"],
+      },
+    },
+  },
+  // "inlay_hints": {
+  //   "enabled": true,
+  //   "show_parameter_hints": false
+  // }
+}
