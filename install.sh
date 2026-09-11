@@ -12,7 +12,7 @@ set -euo pipefail
 DOTFILES_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
 # Packages that make sense everywhere, plus the platform-specific ones.
-COMMON_PACKAGES=(claude zed nvim ohmyzsh)
+COMMON_PACKAGES=(claude zed nvim ohmyzsh herdr)
 DARWIN_PACKAGES=(kanata)
 LINUX_PACKAGES=(kanata)
 

@@ -12,6 +12,7 @@ dotfiles/
 ├── zed/.config/zed/                → ~/.config/zed/
 ├── nvim/.config/nvim/              → ~/.config/nvim
 ├── ohmyzsh/.zshrc                  → ~/.zshrc
+├── herdr/.config/herdr/            → ~/.config/herdr/
 └── kanata/.config/kanata/          → ~/.config/kanata
 ```
 
@@ -44,6 +45,11 @@ file first, or use `stow --adopt <pkg>` to pull it into the repository.
 - `kanata/.config/kanata/start.sh` starts the Karabiner virtual HID daemon on
   macOS only; on Linux it just runs `kanata`. Override the binary or config with
   `KANATA_BIN` / `KANATA_CONFIG`.
+- `herdr` only links `config.toml`; the rest of `~/.config/herdr` is runtime
+  state (sockets, logs, `session.json`) and stays out of the repository. The
+  keybindings are remapped to match tmux — validate edits with
+  `herdr config check` and apply them to a running server with
+  `herdr server reload-config`.
 - Zed's `agent.terminal_init_command` points at `~/.config/zed/herdr-agent.sh`,
   which ships with the `zed` package and falls back to running the agent
   directly when herdr is not installed.

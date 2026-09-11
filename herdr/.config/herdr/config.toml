@@ -1,0 +1,72 @@
+# herdr configuration — tmux-style keybindings
+#
+# Concept mapping from tmux:
+#   tmux session -> herdr workspace
+#   tmux window  -> herdr tab
+#   tmux pane    -> herdr pane
+#
+# Only keys that differ from herdr's defaults are set here; herdr defaults that
+# already match tmux (prefix, c, n, p, 1-9, x, z, ?) are listed for reference.
+# Validate changes with `herdr config check`, apply with `herdr server reload-config`.
+
+onboarding = false
+
+[keys]
+prefix = "ctrl+b"
+
+# --- Sessions (workspaces) ---
+detach = "prefix+d"                  # tmux: detach-client
+workspace_picker = "prefix+s"        # tmux: choose-session
+goto = "prefix+w"                    # tmux: choose-tree
+rename_workspace = "prefix+$"        # tmux: rename-session
+previous_workspace = "prefix+("      # tmux: switch-client -p
+next_workspace = "prefix+)"          # tmux: switch-client -n
+settings = "prefix+shift+s"          # herdr-only; moved aside for choose-session
+
+# --- Windows (tabs) ---
+new_tab = "prefix+c"                 # tmux: new-window (herdr default)
+rename_tab = "prefix+,"              # tmux: rename-window
+close_tab = "prefix+&"               # tmux: kill-window
+previous_tab = "prefix+p"            # tmux: previous-window (herdr default)
+next_tab = "prefix+n"                # tmux: next-window (herdr default)
+switch_tab = "prefix+1..9"           # tmux: select-window (herdr default)
+
+# --- Panes ---
+# herdr "vertical" splits side-by-side; "horizontal" stacks. tmux names the
+# divider the other way round, so the bindings look swapped but match tmux's
+# on-screen result.
+split_vertical = "prefix+%"          # tmux: split-window -h (side by side)
+split_horizontal = 'prefix+"'        # tmux: split-window -v (stacked)
+close_pane = "prefix+x"              # tmux: kill-pane (herdr default)
+zoom = "prefix+z"                    # tmux: resize-pane -Z (herdr default)
+cycle_pane_next = "prefix+o"         # tmux: select-pane -t :.+
+# prefix+o is tmux's next-pane, so herdr's notification jump moves aside.
+# Without this it silently wins prefix+o and cycle_pane_next is disabled.
+open_notification_target = "prefix+shift+o"
+last_pane = "prefix+;"               # tmux: last-pane
+copy_mode = "prefix+["               # tmux: copy-mode
+swap_pane_left = "prefix+{"          # tmux: swap-pane -U
+swap_pane_right = "prefix+}"         # tmux: swap-pane -D
+
+# Pane focus stays on herdr's vim-style hjkl rather than tmux's arrows.
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# tmux resizes with prefix+ctrl+arrow; herdr's resize mode stays on prefix+r.
+resize_pane_left = "prefix+ctrl+left"
+resize_pane_down = "prefix+ctrl+down"
+resize_pane_up = "prefix+ctrl+up"
+resize_pane_right = "prefix+ctrl+right"
+
+# --- herdr-only, left at defaults ---
+# help = "prefix+?"                  # matches tmux list-keys
+# open_notification_target -> moved to prefix+shift+o (see Panes)
+# toggle_sidebar = "prefix+b"
+# new_workspace = "prefix+shift+n"
+# close_workspace = "prefix+shift+d"
+# rename_pane = "prefix+shift+p"
+# edit_scrollback = "prefix+e"
+# resize_mode = "prefix+r"
+# reload_config = "prefix+shift+r"
